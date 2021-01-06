@@ -1,14 +1,16 @@
 def division_num(num1, num2):
     try:
-        num1 = int(input('Введите делимое: '))
-        num2 = int(input('Введите делитель: '))
-    except ValueError:
-        print('Введите число!')
-   try:
         division_result = num1 / num2
     except ZeroDivisionError:
-        print('На 0 делить нельзя!')
-        return division_result
+        return 'На 0 делить нельзя!'
+    return division_result
 
-result = division_num(num1, num2)
+
+try:
+    div1 = int(input('Введите делимое: '))
+    div2 = int(input('Введите делитель: '))
+except ValueError:
+    print('Нужно ввести число!')
+
+result = division_num(div1, div2)
 print(result)
