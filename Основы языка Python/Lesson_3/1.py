@@ -1,3 +1,4 @@
+# Коментарий для создания PR
 def division_num(num1, num2):
     try:
         division_result = num1 / num2

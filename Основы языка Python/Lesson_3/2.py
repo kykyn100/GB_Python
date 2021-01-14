@@ -1,3 +1,6 @@
+# Коментарий для создания PR
+
+
 def user_info(name='-', surname='-', born_date='-',
               living_town='-', email='-', phone='-'):
     return name, surname, born_date, living_town, email, phone

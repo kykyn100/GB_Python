@@ -1,3 +1,6 @@
+# Коментарий для создания PR
+
+
 def my_func1(x, y):
     result = x ** y
     return result

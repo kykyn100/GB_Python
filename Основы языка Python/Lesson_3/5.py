@@ -1,3 +1,6 @@
+# Коментарий для создания PR
+
+
 def sum_input(user_input):
     sub_total = 0
     for i in user_input:
