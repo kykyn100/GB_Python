@@ -1,3 +1,6 @@
+# Коментарий для создания PR
+
+
 def sum_two_max(arg1, arg2, arg3):
     all_args = [arg1, arg2, arg3]
     all_args.remove(min(all_args))
