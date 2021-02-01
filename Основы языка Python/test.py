@@ -1,18 +1,32 @@
-from itertools import count
+class Worker:
+
+    name = None
+    surname = None
+    position = None
+    _income = {"Оклад": None, "Премия": None}
+
+    def __init__(self, name, surname, position, wage, bonus):
+        self.name = name
+        self.surname = surname
+        self.position = position
+        self._income["Оклад"] = wage
+        self._income["Премия"] = bonus
 
 
-def fact(n):
-    if n == 0:
-        yield 1
-    else:
-        for z in range(1, n + 1):
-            result = 1
-            for i in range(1, z + 1):
-                result *= i
-            yield result
+class Position(Worker):
+    def get_full_name(self):
+        print(f'Полное имя сотрудника: {Worker.name} {Worker.surname}')
+
+    def get_total_income(self):
+        pass
 
 
-num = int(input('Факториал каокго числа необходимо вычислить? '))
-
-for el in fact(num):
-    print(el)
+slave = Worker('Вася', 'Пупкин', 'Раб', '10', '0')
+print(dir(slave))
+print(slave.position)
+print(slave.name)
+print(slave.surname)
+print('*' * 10)
+print(Worker.surname)
+print(Worker.name)
+print(Worker.position)
