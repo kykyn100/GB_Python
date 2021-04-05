@@ -1,18 +1,6 @@
-from itertools import count
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 
+result = [elem for elem in a if elem in b]
 
-def fact(n):
-    if n == 0:
-        yield 1
-    else:
-        for z in range(1, n + 1):
-            result = 1
-            for i in range(1, z + 1):
-                result *= i
-            yield result
-
-
-num = int(input('Факториал каокго числа необходимо вычислить? '))
-
-for el in fact(num):
-    print(el)
+print(result)
