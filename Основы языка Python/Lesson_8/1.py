@@ -1,29 +1,32 @@
-"""1. Реализовать класс «Дата», функция-конструктор которого должна принимать
- дату в виде строки формата «день-месяц-год». В рамках класса реализовать
-  два метода. Первый, с декоратором @classmethod, должен извлекать число,
-   месяц, год и преобразовывать их тип к типу «Число». Второй, с декоратором
-    @staticmethod, должен проводить валидацию числа, месяца и года
-     (например, месяц — от 1 до 12). Проверить работу
-      полученной структуры на реальных данных."""
-
-
 class Data:
 
     """ Класс 'Дата'
         Инициатор принимает строку вида «день-месяц-год»"""
 
+    class_date = '01-01-1970'
+
     def __init__(self, date: str) -> None:
-        self.date = date
+        Data.class_date = date
 
     @classmethod
     def converter(cls):
-        pass
+        cnv = ''.join(cls.class_date.split('-'))
+        return int(cnv)
 
     @staticmethod
-    def validator(date: str):
+    def validator(date):
         import time
-        date_str = date
-        valid_date = time.strptime(date_str, '%d%m%Y')
-        print(valid_date)
+        date_str = str(date)
+        try:
+            time.strptime(date_str, '%d%m%Y')
+            print('Все верно!')
+        except ValueError:
+            print('Неверный формат!')
 
-Data.validator('05031988')
+
+my_date = '05-03-1988'
+
+Data(my_date)
+print(Data.converter())
+Data.validator(Data.converter())
+
